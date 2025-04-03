@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://uwa6cfr0mt3"]
+
+[ext_resource type="Script" path="res://mob/mob.gd" id="1_ke8c0"]
+[ext_resource type="Texture2D" uid="uid://cpt35ut4oho45" path="res://characters/huntress/Sprites/Run.png" id="1_xjvm5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0mn6"]
+atlas = ExtResource("1_xjvm5")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y4au"]
+atlas = ExtResource("1_xjvm5")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvg6e"]
+atlas = ExtResource("1_xjvm5")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_736oi"]
+atlas = ExtResource("1_xjvm5")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv0xu"]
+atlas = ExtResource("1_xjvm5")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtro8"]
+atlas = ExtResource("1_xjvm5")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoaaw"]
+atlas = ExtResource("1_xjvm5")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktuf8"]
+atlas = ExtResource("1_xjvm5")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kxwc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0mn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y4au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvg6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_736oi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv0xu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtro8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qoaaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktuf8")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bs3f"]
+radius = 14.0
+height = 48.0
+
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
+position = Vector2(522, 156)
+script = ExtResource("1_ke8c0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.99998, 7.62939e-06)
+scale = Vector2(1.54667, 1.36667)
+sprite_frames = SubResource("SpriteFrames_8kxwc")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 6)
+shape = SubResource("CapsuleShape2D_1bs3f")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2, 5.25)
+scale = Vector2(1.1, 1.875)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
