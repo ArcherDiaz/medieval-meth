@@ -18,6 +18,7 @@ func get_input():
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x -= SPEED
 		$AnimatedSprite2D.play("run")
+		$AudioStreamPlayer2D.play()
 		$AnimatedSprite2D.flip_h = true
 	elif Input.is_action_pressed("attack"):
 		is_attacking = true

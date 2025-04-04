@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5i0p68bsf2kj"
+path="res://.godot/imported/Running Echo.mp3-dd80af287b79663710279836ca53c651.mp3str"
+
+[deps]
+
+source_file="res://Running Echo.mp3"
+dest_files=["res://.godot/imported/Running Echo.mp3-dd80af287b79663710279836ca53c651.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
