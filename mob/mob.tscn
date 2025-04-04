@@ -71,7 +71,7 @@ animations = [{
 radius = 14.0
 height = 48.0
 
-[node name="Mob" type="RigidBody2D" groups=["mobs"]]
+[node name="Mob" type="CharacterBody2D" groups=["mobs"]]
 position = Vector2(522, 156)
 script = ExtResource("1_ke8c0")
 
